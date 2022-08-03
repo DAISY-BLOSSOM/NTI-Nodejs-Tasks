@@ -1,0 +1,10 @@
+clients => name, accountIntialBalance, currentBalnce , transaction:[
+    {date, type, status}
+]
+
+
+add customer (show, del, edit, add, show all)
+
+add transaction => 
+    withdraw => number <5000 , <currentBalance , add tranaction
+    add balance => number > 0 , <10000

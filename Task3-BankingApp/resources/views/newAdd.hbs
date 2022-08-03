@@ -1,0 +1,19 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    <form method="post">
+{{#each fields}}
+        <div class="mb-3">
+            <input class="form-control" name="{{this.fieldName}}" placeholder="{{this.placeholder}}" value="{{this.value}}">
+            {{#if this.error}}
+                <p class="alert alert-danger my-1">{{this.error}}</p>
+            {{/if}}
+        </div>
+{{/each}}
+        <div class="mb-3">
+            <button class="btn btn-primary">add user</button>
+        </div>
+
+    </form>
+</section>
+{{>footer}}

@@ -1,0 +1,26 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    <form method="post" action="/addLogic">
+        <div class="mb-3">
+            <input class="form-control" name="name" placeholder="name">
+            {{#if myErr.name}}
+                <p class="alert alert-danger my-1">{{myErr.name}}</p>
+            {{/if}}
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="email" placeholder="email">
+            {{#if myErr.email}}
+                <p class="alert alert-danger my-1">{{myErr.email}}</p>
+            {{/if}}
+        </div>
+         <div class="mb-3">
+            <input class="form-control" name="accountIntialBalance" placeholder="accountIntialBalance">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">add user</button>
+        </div>
+
+    </form>
+</section>
+{{>footer}}

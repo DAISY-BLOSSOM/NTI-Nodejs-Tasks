@@ -1,0 +1,35 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    {{#unless result}}
+    <div class="alert alert-danger">No users with this id</div>
+    {{else}}
+        {{#each fields}}
+            <div class="alert alert-primary p-2">
+                {{this.fieldName}} : {{this.value}}
+            </div>
+        {{/each}}
+        <table class="table table-bordered">
+            <thead>
+                <th>id</th>
+                <th>Name</th>
+                <th>details</th>
+                <th>actions</th>
+            </thead>
+            <tbody>
+                {{#each result.transaction}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.date}}</td>
+                    <td>{{this.type}}</td>
+                    <td>{{this.status}}</td>
+                    <td>
+                        <a href="/delAddr/{{this._id}}" class="btn btn-danger"> delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{/unless}}
+</section>
+{{>footer}}
